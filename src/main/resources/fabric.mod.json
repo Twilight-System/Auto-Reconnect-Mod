@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "auto-reconnect",
+	"version": "${version}",
+	"name": "Auto Reconnect",
+	"description": "Auto Reconnects to a server if there is a specific disconnect message",
+	"authors": [
+		"Spiral_Cat"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/auto-reconnect/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"com.twilightsystem.AutoReconnectClient"
+		]
+	},
+	"mixins": [
+		"auto-reconnect.mixins.json",
+		{
+			"config": "auto-reconnect.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.6",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-key-binding-api-v1": "*"
+	},
+	"suggests": {
+		"modmenu" : "*"
+	}
+}
